@@ -77,11 +77,40 @@ body {
   text-align: left;
   background: none;
   border: none;
-  cursor: pointer;
   padding: 0.85em;
   color: inherit;
   font: inherit;
+  cursor: pointer;
+  display: flex;
 }
+
+#sidebar svg {
+  flex-shrink: 0;
+  fill: var(--text-clr);
+}
+
+#sidebar button.dropdown-btn span {
+  flex-grow: 1;
+  padding-left: 13.6px;
+}
+#sidebar a:hover, #sidebar .dropdown-btn:hover {
+  background-color: var(--hover-clr);
+}
+#sidebar .sub-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+
+
+  > div {
+    overflow: hidden;
+  }
+}
+
+#sidebar .sub-menu.show {
+  grid-template-rows: 1fr;
+}
+
 
 main {
   padding: min(30px, 7%);
