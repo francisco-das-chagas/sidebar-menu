@@ -110,6 +110,31 @@ body {
 #sidebar .sub-menu.show {
   grid-template-rows: 1fr;
 }
+.dropdown-btn svg {
+  transition: 200ms ease;
+}
+
+.rotate svg:last-child{
+  rotate: 180deg;
+}
+
+#sidebar .sub-menu a {
+  padding-left: 2em;
+}
+
+#toggle-btn {
+  margin-left: auto;
+  padding: 1em;
+  border: none;
+  border-radius: .5em;
+  background: none;
+  cursor: pointer;
+
+  svg {
+    transition: rotate 150ms ease;
+  }
+}
+
 
 
 main {
