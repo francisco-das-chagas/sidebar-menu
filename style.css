@@ -80,12 +80,11 @@ body {
   align-items: center;
   gap: 1em;
 }
-.dropdown-btn {
+a .dropdown-btn {
   width: 100%;
   text-align: left;
   background: none;
   border: none;
-  padding: 0.85em;
   color: inherit;
   font: inherit;
   cursor: pointer;
@@ -97,9 +96,8 @@ body {
   fill: var(--text-clr);
 }
 
-#sidebar button.dropdown-btn span {
+#sidebar .dropdown-btn span {
   flex-grow: 1;
-  padding-left: 13.6px;
 }
 #sidebar a:hover, #sidebar .dropdown-btn:hover {
   background-color: var(--hover-clr);
@@ -108,7 +106,6 @@ body {
   display: grid;
   grid-template-rows: 0fr;
   transition: 300ms ease-in-out;
-
 
   > div {
     overflow: hidden;
@@ -165,4 +162,67 @@ main p {
 h2,
 p {
   margin-top: 1em;
+}
+@media(max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    border: none;
+    padding: 2rem;
+  }
+  #sidebar {
+    height: 60px;
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid var(--line-clr);
+    padding: 0;
+    position: fixed;
+    top: unset;
+    bottom: 0;
+
+    > ul {
+      padding: 0;
+      display: grid;
+      grid-auto-columns: 60px;
+      grid-auto-flow: column;
+      align-items: center;
+      overflow-x: scroll;
+    }
+    ul li {
+      height: 100%;
+    }
+    .dropdown-btn {
+      padding: 0.85em;
+    }
+
+    ul a, ul .dropdown-btn {
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      border-radius: 0;
+      justify-content: center;
+    }
+
+    ul li span, ul li:first-child, .dropdown-btn svg:last-child{
+      display: none;
+    }
+
+    .sub-menu .show {
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      box-sizing: border-box;
+      height: 60px;
+      width: 100%;
+      background-color: var(--hover-clr);
+      border-top: 1px solid var(--line-clr);
+      display: flex;
+      justify-content: center;
+
+      li {
+        display: inline-flex;
+      }
+    }
+  }
 }
