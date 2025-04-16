@@ -208,7 +208,7 @@ p {
       display: none;
     }
 
-    .sub-menu .show {
+   ul li .sub-menu.show {
       position: fixed;
       bottom: 60px;
       left: 0;
@@ -220,9 +220,19 @@ p {
       display: flex;
       justify-content: center;
 
+      > div {
+        overflow-x: auto;
+      }
       li {
         display: inline-flex;
       }
+      a {
+        box-sizing: border-box;
+        padding: 1em;
+        width: auto;
+        justify-content: center;
+      }
+     
     }
   }
 }
